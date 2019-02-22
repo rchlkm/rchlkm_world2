@@ -6,7 +6,7 @@ class Category < ApplicationRecord
 	validates :content, :presence => true
 
 
-	scope :active, 			 -> { where('active = ?', true) }
-  	scope :alphabetical, -> { order('name') }
+	scope :active, -> { where('active = ?', true) }
+  	scope :alphabetical, -> { order('title') }
   
 end
