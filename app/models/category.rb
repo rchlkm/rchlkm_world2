@@ -1,7 +1,12 @@
 class Category < ApplicationRecord
 	has_many :photos
+	has_many :articles
 
-	scope :active, 			 -> { where('active = ?', true) }
-  scope :alphabetical, -> { order('name') }
+	validates :title, :presence => true
+	validates :content, :presence => true
+
+
+	scope :active, -> { where('active = ?', true) }
+  	scope :alphabetical, -> { order('title') }
   
 end
